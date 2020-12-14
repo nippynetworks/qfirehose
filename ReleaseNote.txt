@@ -1,0 +1,7 @@
+Release Notes
+
+[LTE&5G_QFirehose_Linux&Android_V1.2]
+Date:   2019/07/31
+enhancement:
+1. First Release Version of QFirehose Tool.
+	 

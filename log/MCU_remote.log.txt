@@ -1,0 +1,37 @@
+root@cqh6:~# ./Qfirehose_linux/qfirehose -p 9008
+[000.000] QFirehose Version: LTE_QFirehose_Linux&Android_V1.1.8
+[000.000] Builded: Jul  5 2019 04:04:13
+[000.000] create_tcp_server tcp_port=9008
+[000.000] server_fd=3
+[000.000] wait_client_connect
+[028.838] client_fd=4
+[028.839] D: /dev/bus/usb/006/029 idVendor=2c7c idProduct=0620
+[028.839] C: /dev/bus/usb/006/029 bNumInterfaces: 6
+[028.839] I: If#= 0 Alt= 0 #EPs= 2 Cls=ff Sub=ff Prot=30
+[028.839] E: Ad=81 Atr=02 MxPS= 1024 Ivl=0ms
+[028.839] E: Ad=01 Atr=02 MxPS= 1024 Ivl=0ms
+[028.839] I: If#= 1 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
+[028.839] I: If#= 2 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
+[028.839] I: If#= 3 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
+[028.839] I: If#= 4 Alt= 0 #EPs= 1 Cls=02 Sub=0e Prot=00
+[028.839] I: If#= 5 Alt= 0 #EPs= 0 Cls=0a Sub=00 Prot=02
+[028.839] I: If#= 5 Alt= 1 #EPs= 2 Cls=0a Sub=00 Prot=02
+[028.839] idVendor=2C7C, idProduct=0620, interfaceNum=6
+[028.839] qusb_open port_name = /dev/ttyUSB0
+[028.843] usb_fd =5
+[029.848] fd=4 read=0, errno: 11 (Resource temporarily unavailable)
+[029.848] noblock_full_read fd=4 cur=0, size=8
+[029.848] client_fd=4 read=0, errno: 11 (Resource temporarily unavailable)
+[029.848] wait_client_connect
+[030.849] client_fd=4
+[030.850] D: /dev/bus/usb/005/037 idVendor=05c6 idProduct=9008
+[030.850] C: /dev/bus/usb/005/037 bNumInterfaces: 1
+[030.850] I: If#= 0 Alt= 0 #EPs= 2 Cls=ff Sub=ff Prot=10
+[030.850] E: Ad=81 Atr=02 MxPS= 512 Ivl=0ms
+[030.850] E: Ad=01 Atr=02 MxPS= 512 Ivl=0ms
+[030.850] idVendor=05C6, idProduct=9008, interfaceNum=1
+[030.850] qusb_open port_name = /dev/ttyUSB0
+[030.851] usb_fd =5
+[114.942] inf[0] ep_in -1/4096, errno = 71 (Protocol error)
+[114.943] usb2tcp_main poll usb_fd = 5, revents = 0011
+[115.944] wait_client_connect
