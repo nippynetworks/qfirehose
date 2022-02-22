@@ -1,7 +1,103 @@
 Release Notes
 
+[QFirehose_Linux_Android_V1.4.9]
+Date:   01/17/2022
+enhancement:
+  1. Solve the problem that DM upgrade is stuck because DM keeps spitting logs
+fix:
+
+[QFirehose_Linux_Android_V1.4.8]
+Date:   11/12/2021
+enhancement:
+  1. EM05CE Interface0 is a non-DM port with input and output endpoints. The actual DM port is Interface3
+  2. EM05-G Upgrade Process Power off and power on. The next upgrade takes a long time to switch to download mode. Increase the waiting time to 10 seconds
+  3. Optimized receiving and sending buf, no longer sharing one buf
+fix:
+
+[QFirehose_Linux_Android_V1.4.7]
+Date:   9/28/2021
+enhancement:
+  1. Support EM05-G, DM is at usb interface 3
+  2. Added support for smart platform SC600Y-EM and SC60-CE upgrade
+  3. Support sdx20 quallcomm default 056c/901f
+fix:
+
+[Quectel_LTE&5G_QFirehose_Linux&Android_V1.4.6]
+Date:   6/11/2021
+enhancement:
+fix:
+	1. 增加对EC20冀北项目
+
+[Quectel_LTE&5G_QFirehose_Linux&Android_V1.4.5]
+Date:   3/4/2021
+enhancement:
+fix:
+	1. fix upgrdae fail of AG550/EM120
+	
+[Quectel_LTE&5G_QFirehose_Linux&Android_V1.4.4]
+Date:   1/27/202
+enhancement:
+fix:
+	1. increase timeout of erase cmd to 15 seconds (from 6 seconds)	
+	 
+[Quectel_LTE&5G_QFirehose_Linux&Android_V1.4.3]	 
+Date:   12/2/2020
+enhancement:
+  1. '-u usbmon.log': The time stamp in usbmon.log is same QFirehose self
+  2. USB ZLP: if kernel verison <= 4.2 and usb controoler type is XHCI.
+     there is a USB ZLP bug which cause FW upgrade fail at 0%,
+     print Warnning for this bug and tell customer how to fix.
+fix:
+	1. AG35: FW upgrade fail (A very low probability) in one customer's factory	
+	  
+[Quectel_LTE&5G_QFirehose_Linux&Android_V1.4]
+Date:   8/26/2020
+enhancement:
+  1.  release to <Technical Writer>
+fix:
+  
+[Quectel_LTE&5G_QFirehose_Linux&Android_V1.3.3]	  
+Date:   7/27/2020 
+enhancement:
+fix:
+	1. 	AG525 has more than 32 partitions, support this
+
+[Quectel_LTE&5G_QFirehose_Linux&Android_V1.3.2]	  
+Date:   7/27/2020 
+enhancement: 
+fix:
+	1. filter out ASR/HISI modems, only support MDM/SDX modems
+  2. FW upgrade fail when USB3.0 modems switch EDL mode (05c6:9008),
+     will become usb2.0 device, and the /sys/bus/usb/devices/x-x will change
+
+[Quectel_LTE&5G_QFirehose_Linux&Android_V1.3]
+Date:   4/14/2020 
+enhancement: 
+  1. X55 support upgrade from RAM DUMP state
+fix:
+
+[LTE&5G_QFirehose_Linux&Android_V1.2.4]
+Date:   3/26/2020
+enhancement:
+	1. make sure 'first erase SBL, last program SBL', even The sequence in update/firehose/rawprogram*.xml is wrong
+fix:  
+
+[LTE&5G_QFirehose_Linux&Android_V1.2.3]
+Date:   2/24/2019
+enhancement:
+  1. support 'vendor' attribute in rawprogram*.xml
+  2. support '-u usbmon_logfile', can capture usbmon log when upgrade module.
+fix:  
+
+[LTE&5G_QFirehose_Linux&Android_V1.2.2]
+Date:   12/11/2019
+enhancement:
+  1. auto detect and detach kernel driver when modem in EDL mode (05c6:9008).
+fix:  
+  1. Do not exit if get version command fails
+	   
 [LTE&5G_QFirehose_Linux&Android_V1.2]
 Date:   2019/07/31
 enhancement:
-1. First Release Version of QFirehose Tool.
+  1. First Release Version of QFirehose Tool.
 	 

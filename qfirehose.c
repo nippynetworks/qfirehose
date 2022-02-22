@@ -17,6 +17,10 @@
 #include <grp.h>
 #include <sys/types.h>
 #include <pwd.h>
+#ifdef USE_IPC_MSG
+#include <sys/msg.h>
+#include <sys/ipc.h>
+#endif
 
 #include "usb_linux.h"
 #include "md5.h"
@@ -57,9 +61,12 @@ int switch_to_edl_mode(void *usb_handle) {
     //unsigned char edl_cmd[] = {0x3a, 0xa1, 0x6e, 0x7e}; //DL (download mode)
     unsigned char *pbuf = malloc(512);
     int rx_len;
+    int rx_count = 0;
 
      do {
         rx_len = qusb_noblock_read(usb_handle, pbuf , 512, 0, 1000);
+        if (rx_count++ > 100)
+            break;
     } while (rx_len > 0);
 
     dbg_time("switch to 'Emergency download mode'\n");
@@ -67,6 +74,8 @@ int switch_to_edl_mode(void *usb_handle) {
     if (rx_len < 0)
         return 0;
 
+    rx_count = 0;
+    
     do {
         rx_len = qusb_noblock_read(usb_handle, pbuf , 512, 0, 3000);
         if (rx_len == sizeof(edl_cmd) && memcmp(pbuf, edl_cmd, sizeof(edl_cmd)) == 0) {
@@ -74,6 +83,10 @@ int switch_to_edl_mode(void *usb_handle) {
             free(pbuf);
             return 1;
         }
+        
+        if (rx_count++ > 50)
+            break;
+        
     } while (rx_len > 0);
 
     free(pbuf);
@@ -94,8 +107,9 @@ static void usage(int status, const char *program_name)
         dbg_time("    -p [/dev/ttyUSBx]              Diagnose port, will auto-detect if not specified\n");
         dbg_time("    -s [/sys/bus/usb/devices/xx]   When multiple modules exist on the board, use -s specify which module you want to upgrade\n");
         dbg_time("    -e                             Erase All Before Download (will Erase calibration data, careful to USE)\n");
-        dbg_time("    -n                             Will skip MD5 check\n");
         dbg_time("    -l [dir_name]                  Sync log into a file(will create qfirehose_timestamp.log)\n");
+        dbg_time("    -u [usbmon_log]                Catch usbmon log and save to file (need debugfs and usbmon driver)\n");
+        dbg_time("    -n                             Skip MD5 check\n");
     }
     exit(status);
 }
@@ -115,8 +129,13 @@ static int system_ready(char** dirhose_dir)
     {
         //set_transfer_allbytes(calc_filesizes(*dirhose_dir));
         sprintf(temp, "%s/update/firehose", *dirhose_dir);
-        if(access(temp, R_OK))
+        if (access(temp, R_OK))
+        {
+            if (strstr(*dirhose_dir, "SC600Y") || strstr(*dirhose_dir, "SC60"))
+                return 0;
+
             error_return();
+        }
         free(*dirhose_dir);
         *dirhose_dir = strdup(temp);
         return 0;
@@ -171,14 +190,14 @@ int main(int argc, char* argv[])
     int xhci_usb3_to_usb2_cause_syspatch_chage = 1;
     int usb2tcp_port = 0;
     char filename[128] = {'\0'};
-	const char *usbmon_logfile = NULL;
+    const char *usbmon_logfile = NULL;
 
     firehose_dir[0] = module_port_name[0] = module_sys_path[0] = '\0';
 
     /* set file priviledge mask 0 */
     umask(0);
     /*build V1.0.8*/
-    dbg_time("QFirehose Version: Quectel_LTE&5G_QFirehose_Linux&Android_V1.2.4\n");
+    dbg_time("Version: QFirehose_Linux_Android_V1.4.9\n"); //when release, rename to V1.X
 #ifndef __clang__
     dbg_time("Builded: %s %s\n", __DATE__,__TIME__);
 #endif
@@ -206,7 +225,7 @@ int main(int argc, char* argv[])
                 break;
             case 'l':
                 if (loghandler) fclose(loghandler);
-                snprintf(filename, sizeof(filename), "%s/qfirehose_%lu.log", optarg, time(NULL));
+                snprintf(filename, sizeof(filename), "%.80s/qfirehose_%lu.log", optarg, time(NULL));
                 loghandler = fopen(filename, "w+");
                 if (loghandler) dbg_time("upgrade log will be sync to %s\n", filename);
                 break;
@@ -232,8 +251,8 @@ int main(int argc, char* argv[])
             case 'e':    
                 q_erase_all_before_download = 1;
                 break;
-			case 'u':
-				usbmon_logfile = strdup(optarg);
+                case 'u':
+                    usbmon_logfile = strdup(optarg);
                 break;
             case 'h':
                 usage(EXIT_SUCCESS, argv[0]);
@@ -242,9 +261,9 @@ int main(int argc, char* argv[])
             break;
         }
     }
-	
-	if(usbmon_logfile)
-		ql_capture_usbmon_log(usbmon_logfile);
+
+    if (usbmon_logfile)
+        ql_capture_usbmon_log(usbmon_logfile);
 
     update_transfer_bytes(0);
     if (usb2tcp_port)
@@ -267,6 +286,9 @@ int main(int argc, char* argv[])
         firehose_dir[opt-1] = '\0';
     }
     
+    if (strstr(firehose_dir, "SC600Y") || strstr(firehose_dir, "SC60"))
+        check_hash = 0;
+	
     if (!g_part_upgrade) {
         struct stat st;
         const char *update_dir = "/update/";
@@ -347,22 +369,48 @@ __edl_retry:
         usb_handle = qusb_noblock_open(module_sys_path, &idVendor, &idProduct, &interfaceNum);
         if (usb_handle == NULL && module_sys_path[0] == '/') {
             sleep(1); //in reset sate, wait connect
-            if (xhci_usb3_to_usb2_cause_syspatch_chage && access(module_sys_path, R_OK) && errno == ENOENT) {
+            if (xhci_usb3_to_usb2_cause_syspatch_chage && access(module_sys_path, R_OK) && errno_nodev()) {
                 auto_find_quectel_modules(module_sys_path, MAX_PATH);
             }
-            continue;
+            else if (access(module_sys_path, R_OK) && errno_nodev()) {
+                int busidx = strlen("/sys/bus/usb/devices/");
+                char busnum = module_sys_path[busidx];
+
+                module_sys_path[busidx] = busnum-1;
+                if (access(module_sys_path, R_OK) && errno_nodev())
+                    module_sys_path[busidx] = busnum+1;
+
+                if (!access(module_sys_path, R_OK)) {
+                    usb_handle = qusb_noblock_open(module_sys_path, &idVendor, &idProduct, &interfaceNum);
+                    if (usb_handle && (idVendor != 0x05c6 || idProduct != 0x9008)) {
+                        qusb_noblock_close(usb_handle);
+                        usb_handle = NULL;  
+                    }
+                }
+                module_sys_path[busidx] = busnum;
+            }
+
+            if (usb_handle == NULL)
+                continue;
         }
 
         if (idVendor == 0x2c7c && interfaceNum > 1) {
             if (detect_and_judge_module_version(usb_handle)) {
-                update_transfer_bytes(-1);
+                // update_transfer_bytes(-1);
                 /* do not return here, this command will fail when modem is not ready */
                 // error_return();
             }
         }
 
-        if (interfaceNum == 1)
-            break;
+        if (interfaceNum == 1) {
+            if ((idVendor == 0x2C7C) && (idProduct == 0x0800)) {
+                // although 5G module stay in dump mode, after send edl command, it also can enter edl mode
+                dbg_time("5G module stay in dump mode!\n");				
+            } else {
+                break;					
+            }
+            dbg_time("something went wrong???, why only one interface left\n");
+        }
 
         switch_to_edl_mode(usb_handle);
         qusb_noblock_close(usb_handle);
@@ -389,7 +437,7 @@ __edl_retry:
             sleep(1);
             stream_download(firehose_dir, usb_handle, qusb_zlp_mode);
             qusb_noblock_close(usb_handle);
-            sleep(1);
+            sleep(10);      //EM05-G switching to download mode is slow and increases the waiting time to 10 seconds
             goto __edl_retry;
         }
 
@@ -433,53 +481,155 @@ void set_transfer_allbytes(long long bytes)
     transfer_bytes = 0;
     all_bytes_to_transfer = bytes;
 }
+
+int update_progress_msg(int percent);
+int update_progress_file(int percent);
 /*
 return percent
 */
-#define IPC_FILE "/data/update.conf"
 int update_transfer_bytes(long long bytes_cur)
 {
     static int last_percent = -1;
     int percent = 0;
-    static int flag = 0;
-    static int ipcfd = -1;
-    char buff[16] = {'\0'};
 
-    if (flag == 0) {
-        if (loghandler) {
-            /* Have set umask previous, no need to call fchmod */
-            ipcfd = open(IPC_FILE, O_TRUNC | O_CREAT | O_WRONLY | O_NONBLOCK, S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH);
-            if (ipcfd < 0)
-                dbg_time("Fail to open(O_WRONLY) %s: %s\n", IPC_FILE, strerror(errno));
-            }
-        flag = 1;
-    }
-
-    if (bytes_cur == -1 || bytes_cur == 0) {
+    if (bytes_cur == -1 || bytes_cur == 0)
+    {
         percent = bytes_cur;
-        if(ipcfd > 0) {
-            lseek(ipcfd, 0, SEEK_SET);
-            snprintf(buff, sizeof(buff), "%d", percent);
-            if (write(ipcfd, buff, strlen(buff)) < 0)
-                dbg_time("fail to write upgrade progress into %s: %s\n", IPC_FILE, strerror(errno));
-        }
-        if (bytes_cur == -1 && ipcfd > 0) close(ipcfd);
-        return percent;
+    }
+    else
+    {
+        transfer_bytes += bytes_cur;
+        percent = (transfer_bytes * 100) / all_bytes_to_transfer;
     }
 
-    transfer_bytes += bytes_cur;
-    percent = (transfer_bytes * 100) / all_bytes_to_transfer;
-    if (percent != last_percent) {
+    if (percent != last_percent)
+    {
         last_percent = percent;
-        dbg_time("Upgrade progress:   %d\n", percent);
-        if(ipcfd > 0) {
-            lseek(ipcfd, 0, SEEK_SET);
-            snprintf(buff, sizeof(buff), "%d", percent);
-            if (write(ipcfd, buff, strlen(buff)) < 0)
-                dbg_time("fail to write upgrade progress into %s: %s\n", IPC_FILE, strerror(errno));
-        }
-        if (percent == 100 && ipcfd > 0) close(ipcfd);
+#ifdef USE_IPC_FILE
+        update_progress_file(percent);
+#endif
+#ifdef USE_IPC_MSG
+        update_progress_msg(percent);
+#endif
     }
 
     return percent;
 }
+
+void show_progress()
+{
+    static int percent = 0;
+
+    if (all_bytes_to_transfer)
+        percent = (transfer_bytes * 100) / all_bytes_to_transfer;
+    dbg_time("upgrade progress %d%% %lld/%lld\n", percent, transfer_bytes, all_bytes_to_transfer);
+}
+
+#ifdef USE_IPC_FILE
+#define IPC_FILE_ANDROID "/data/update.conf"
+#define IPC_FILE_LINUX "/tmp/update.conf"
+int update_progress_file(int percent)
+{
+    static int ipcfd = -1;
+    char buff[16];
+
+    if (ipcfd < 0)
+    {
+#ifdef ANDROID
+        const char *ipc_file = IPC_FILE_ANDROID;
+#else
+        const char *ipc_file = IPC_FILE_LINUX;
+#endif
+        /* Have set umask previous, no need to call fchmod */
+        ipcfd = open(ipc_file, O_TRUNC | O_CREAT | O_WRONLY | O_NONBLOCK, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
+        if (ipcfd < 0)
+        {
+            dbg_time("Fail to open(O_WRONLY) %s: %s\n", ipc_file, strerror(errno));
+            return -1;
+        }
+    }
+
+    lseek(ipcfd, 0, SEEK_SET);
+    snprintf(buff, sizeof(buff), "%d", percent);
+    if (write(ipcfd, buff, strlen(buff)) < 0)
+        dbg_time("fail to write upgrade progress into %s: %s\n", ipc_file, strerror(errno));
+
+    if (percent == 100 || percent < 0)
+        close(ipcfd);
+    return 0;
+}
+#endif
+
+#ifdef USE_IPC_MSG
+#define MSGBUFFSZ 16
+struct message
+{
+    long mtype;
+    char mtext[MSGBUFFSZ];
+};
+
+#define MSG_FILE "/etc/passwd"
+#define MSG_TYPE_IPC 1
+static int msg_get()
+{
+    key_t key = ftok(MSG_FILE, 'a');
+    int msgid = msgget(key, IPC_CREAT | 0644);
+
+    if (msgid < 0)
+    {
+        dbg_time("msgget fail: key %d, %s\n", key, strerror(errno));
+        return -1;
+    }
+    return msgid;
+}
+
+static int msg_rm(int msgid)
+{
+    return msgctl(msgid, IPC_RMID, 0);
+}
+
+static int msg_send(int msgid, long type, const char *msg)
+{
+    struct message info;
+    info.mtype = type;
+    snprintf(info.mtext, MSGBUFFSZ, "%s", msg);
+    if (msgsnd(msgid, (void *)&info, MSGBUFFSZ, IPC_NOWAIT) < 0)
+    {
+        dbg_time("msgsnd faild: msg %s, %s\n", msg, strerror(errno));
+        return -1;
+    }
+    return 0;
+}
+
+static int msg_recv(int msgid, struct message *info)
+{
+    if (msgrcv(msgid, (void *)info, MSGBUFFSZ, info->mtype, IPC_NOWAIT) < 0)
+    {
+        dbg_time("msgrcv faild: type %ld, %s\n", info->mtype, strerror(errno));
+        return -1;
+    }
+    return 0;
+}
+
+/**
+ * this function will not delete the msg queue
+ */
+int update_progress_msg(int percent)
+{
+    char buff[MSGBUFFSZ];
+    int msgid = msg_get();
+    if (msgid < 0)
+        return -1;
+    snprintf(buff, sizeof(buff), "%d", percent);
+
+#ifndef IPC_TEST
+    return msg_send(msgid, MSG_TYPE_IPC, buff);
+#else
+    msg_send(msgid, MSG_TYPE_IPC, buff);
+    struct message info;
+    info.mtype = MSG_TYPE_IPC;
+    msg_recv(msgid, &info);
+    printf("msg queue read: %s\n", info.mtext);
+#endif
+}
+#endif

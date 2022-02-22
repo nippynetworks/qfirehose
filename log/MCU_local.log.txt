@@ -1,649 +1,581 @@
-root@cqh6:~# ./Qfirehose_linux/qfirehose -f EM20GRAR01A04V01M4G_factory
-[000.000] QFirehose Version: LTE_QFirehose_Linux&Android_V1.1.8
-[000.000] Builded: Jul  5 2019 04:04:13
-[000.001] Find md5 check file <EM20GRAR01A04V01M4G_factory/md5.txt>
-[000.001] md5 checking: EM20GRAR01A04V01M4G_factory/contents.xml pass
-[000.011] md5 checking: EM20GRAR01A04V01M4G_factory/update/abl.elf pass
-[000.027] md5 checking: EM20GRAR01A04V01M4G_factory/update/aop.mbn pass
-[000.062] md5 checking: EM20GRAR01A04V01M4G_factory/update/cefs.mbn pass
-[000.063] md5 checking: EM20GRAR01A04V01M4G_factory/update/devcfg.mbn pass
-[000.099] md5 checking: EM20GRAR01A04V01M4G_factory/update/factory.xqcn pass
-[000.100] md5 checking: EM20GRAR01A04V01M4G_factory/update/firehose/partition_complete_p4K_b256K.mbn pass
-[000.100] md5 checking: EM20GRAR01A04V01M4G_factory/update/firehose/patch_p4K_b256K.xml pass
-[000.106] md5 checking: EM20GRAR01A04V01M4G_factory/update/firehose/prog_firehose_sdx24.mbn pass
-[000.106] md5 checking: EM20GRAR01A04V01M4G_factory/update/firehose/rawprogram_nand_p4K_b256K_factory.xml pass
-[000.108] md5 checking: EM20GRAR01A04V01M4G_factory/update/hyp.mbn pass
-[000.108] md5 checking: EM20GRAR01A04V01M4G_factory/update/multi_image.mbn pass
-[001.398] md5 checking: EM20GRAR01A04V01M4G_factory/update/NON-HLOS.ubi pass
-[001.398] md5 checking: EM20GRAR01A04V01M4G_factory/update/partition.mbn pass
-[001.399] md5 checking: EM20GRAR01A04V01M4G_factory/update/partition_nand.xml pass
-[001.411] md5 checking: EM20GRAR01A04V01M4G_factory/update/sbl1.mbn pass
-[001.615] md5 checking: EM20GRAR01A04V01M4G_factory/update/sdxpoorwills-boot.img pass
-[001.984] md5 checking: EM20GRAR01A04V01M4G_factory/update/sdxpoorwills-recoveryfs.ubi pass
-[003.353] md5 checking: EM20GRAR01A04V01M4G_factory/update/sdxpoorwills-sysfs.ubi pass
-[003.423] md5 checking: EM20GRAR01A04V01M4G_factory/update/sdxpoorwills-usrfs.ubifs pass
-[003.424] md5 checking: EM20GRAR01A04V01M4G_factory/update/sec.dat pass
-[003.432] md5 checking: EM20GRAR01A04V01M4G_factory/update/tools.fv pass
-[003.452] md5 checking: EM20GRAR01A04V01M4G_factory/update/tz.mbn pass
-[003.481] md5 checking: EM20GRAR01A04V01M4G_factory/update/uefi.elf pass
-[003.526] md5 checking: EM20GRAR01A04V01M4G_factory/update/usrdata.ubi pass
-[003.527] md5 checking: EM20GRAR01A04V01M4G_factory/update/xbl_cfg.elf pass
-[003.527] Totals checking 26 files md5 value, 0 file fail!
-[003.528] P: /dev/bus/usb/006/028 idVendor=2c7c idProduct=0620
-[003.528] C: /dev/bus/usb/006/028 bNumInterfaces: 6
-[003.528] I: If#= 0 Alt= 0 #EPs= 2 Cls=ff Sub=ff Prot=30
-[003.528] E: Ad=81 Atr=02 MxPS= 1024 Ivl=0ms
-[003.528] E: Ad=01 Atr=02 MxPS= 1024 Ivl=0ms
-[003.528] I: If#= 1 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
-[003.528] I: If#= 2 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
-[003.528] I: If#= 3 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
-[003.528] I: If#= 4 Alt= 0 #EPs= 1 Cls=02 Sub=0e Prot=00
-[003.528] I: If#= 5 Alt= 0 #EPs= 0 Cls=0a Sub=00 Prot=02
-[003.528] I: If#= 5 Alt= 1 #EPs= 2 Cls=0a Sub=00 Prot=02
-[003.528] qusb_noblock_open port_name = /dev/ttyUSB0
-[004.532] poll_wait events=POLLIN msec=1000 timeout
-[004.532] qusb_noblock_read cur=0, min_size=1
-[004.533] switch to 'Emergency download mode'
-[004.535] successful, wait module reboot
-[005.536] fail to fopen /sys/bus/usb/devices/6-1/uevent, errno: 2 (No such file or directory)
-[006.537] [0] /sys/bus/usb/devices/5-1 5c6/9008/0
-[006.540] P: /dev/bus/usb/005/036 idVendor=05c6 idProduct=9008
-[006.540] C: /dev/bus/usb/005/036 bNumInterfaces: 1
-[006.540] I: If#= 0 Alt= 0 #EPs= 2 Cls=ff Sub=ff Prot=10
-[006.540] E: Ad=81 Atr=02 MxPS= 512 Ivl=0ms
-[006.540] E: Ad=01 Atr=02 MxPS= 512 Ivl=0ms
-[006.541] dir=EM20GRAR01A04V01M4G_factory/update/firehose
-[006.541] dir=EM20GRAR01A04V01M4G_factory/update/firehose
-[006.541] d_name=prog_firehose_sdx24.mbn
-[006.542] prog_nand_firehose_filename = prog_firehose_sdx24.mbn
-[006.542] STATE <-- SAHARA_WAIT_HELLO
-[006.542] RECEIVED <--  SAHARA_HELLO_ID
-[006.542] RECEIVED <-- SAHARA_MODE_IMAGE_TX_PENDING
-[006.542] SENDING --> SAHARA_HELLO_RESPONSE
-[006.543] STATE <-- SAHARA_WAIT_COMMAND
-[006.543] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.543] 0x0000000d 0x00000000 0x00000034
-[006.544] STATE <-- SAHARA_WAIT_COMMAND
-[006.544] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.544] 0x0000000d 0x00000034 0x00000080
-[006.544] STATE <-- SAHARA_WAIT_COMMAND
-[006.544] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.545] 0x0000000d 0x00001000 0x00001000
-[006.545] STATE <-- SAHARA_WAIT_COMMAND
-[006.545] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.546] 0x0000000d 0x00002000 0x000009d0
-[006.546] STATE <-- SAHARA_WAIT_COMMAND
-[006.547] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.547] 0x0000000d 0x00003000 0x00001000
-[006.548] STATE <-- SAHARA_WAIT_COMMAND
-[006.548] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.548] 0x0000000d 0x00004000 0x00001000
-[006.549] STATE <-- SAHARA_WAIT_COMMAND
-[006.549] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.549] 0x0000000d 0x00005000 0x00001000
-[006.550] STATE <-- SAHARA_WAIT_COMMAND
-[006.550] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.551] 0x0000000d 0x00006000 0x00001000
-[006.551] STATE <-- SAHARA_WAIT_COMMAND
-[006.551] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.552] 0x0000000d 0x00007000 0x00001000
-[006.552] STATE <-- SAHARA_WAIT_COMMAND
-[006.553] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.553] 0x0000000d 0x00008000 0x00001000
-[006.553] STATE <-- SAHARA_WAIT_COMMAND
-[006.554] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.554] 0x0000000d 0x00009000 0x00001000
-[006.554] STATE <-- SAHARA_WAIT_COMMAND
-[006.555] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.555] 0x0000000d 0x0000a000 0x00001000
-[006.556] STATE <-- SAHARA_WAIT_COMMAND
-[006.556] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.556] 0x0000000d 0x0000b000 0x00001000
-[006.557] STATE <-- SAHARA_WAIT_COMMAND
-[006.557] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.557] 0x0000000d 0x0000c000 0x00001000
-[006.558] STATE <-- SAHARA_WAIT_COMMAND
-[006.558] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.558] 0x0000000d 0x0000d000 0x00001000
-[006.559] STATE <-- SAHARA_WAIT_COMMAND
-[006.559] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.560] 0x0000000d 0x0000e000 0x00001000
-[006.560] STATE <-- SAHARA_WAIT_COMMAND
-[006.561] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.561] 0x0000000d 0x0000f000 0x00001000
-[006.561] STATE <-- SAHARA_WAIT_COMMAND
-[006.562] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.562] 0x0000000d 0x00010000 0x00001000
-[006.562] STATE <-- SAHARA_WAIT_COMMAND
-[006.562] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.563] 0x0000000d 0x00011000 0x00001000
-[006.563] STATE <-- SAHARA_WAIT_COMMAND
-[006.563] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.563] 0x0000000d 0x00012000 0x00001000
-[006.564] STATE <-- SAHARA_WAIT_COMMAND
-[006.564] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.564] 0x0000000d 0x00013000 0x00001000
-[006.564] STATE <-- SAHARA_WAIT_COMMAND
-[006.565] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.565] 0x0000000d 0x00014000 0x00001000
-[006.565] STATE <-- SAHARA_WAIT_COMMAND
-[006.566] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.566] 0x0000000d 0x00015000 0x00001000
-[006.566] STATE <-- SAHARA_WAIT_COMMAND
-[006.567] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.567] 0x0000000d 0x00016000 0x00001000
-[006.567] STATE <-- SAHARA_WAIT_COMMAND
-[006.567] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.568] 0x0000000d 0x00017000 0x00001000
-[006.568] STATE <-- SAHARA_WAIT_COMMAND
-[006.568] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.568] 0x0000000d 0x00018000 0x00001000
-[006.569] STATE <-- SAHARA_WAIT_COMMAND
-[006.569] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.569] 0x0000000d 0x00019000 0x00001000
-[006.569] STATE <-- SAHARA_WAIT_COMMAND
-[006.570] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.570] 0x0000000d 0x0001a000 0x00001000
-[006.570] STATE <-- SAHARA_WAIT_COMMAND
-[006.571] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.571] 0x0000000d 0x0001b000 0x00001000
-[006.571] STATE <-- SAHARA_WAIT_COMMAND
-[006.572] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.572] 0x0000000d 0x0001c000 0x00001000
-[006.572] STATE <-- SAHARA_WAIT_COMMAND
-[006.572] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.573] 0x0000000d 0x0001d000 0x00001000
-[006.573] STATE <-- SAHARA_WAIT_COMMAND
-[006.573] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.573] 0x0000000d 0x0001e000 0x00001000
-[006.574] STATE <-- SAHARA_WAIT_COMMAND
-[006.574] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.574] 0x0000000d 0x0001f000 0x00001000
-[006.575] STATE <-- SAHARA_WAIT_COMMAND
-[006.575] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.575] 0x0000000d 0x00020000 0x00001000
-[006.575] STATE <-- SAHARA_WAIT_COMMAND
-[006.576] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.576] 0x0000000d 0x00021000 0x00001000
-[006.576] STATE <-- SAHARA_WAIT_COMMAND
-[006.577] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.577] 0x0000000d 0x00022000 0x00001000
-[006.577] STATE <-- SAHARA_WAIT_COMMAND
-[006.578] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.578] 0x0000000d 0x00023000 0x00001000
-[006.578] STATE <-- SAHARA_WAIT_COMMAND
-[006.578] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.578] 0x0000000d 0x00024000 0x00001000
-[006.579] STATE <-- SAHARA_WAIT_COMMAND
-[006.579] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.579] 0x0000000d 0x00025000 0x00001000
-[006.580] STATE <-- SAHARA_WAIT_COMMAND
-[006.580] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.580] 0x0000000d 0x00026000 0x00001000
-[006.580] STATE <-- SAHARA_WAIT_COMMAND
-[006.581] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.581] 0x0000000d 0x00027000 0x00001000
-[006.581] STATE <-- SAHARA_WAIT_COMMAND
-[006.582] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.582] 0x0000000d 0x00028000 0x00001000
-[006.582] STATE <-- SAHARA_WAIT_COMMAND
-[006.583] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.583] 0x0000000d 0x00029000 0x00001000
-[006.583] STATE <-- SAHARA_WAIT_COMMAND
-[006.583] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.583] 0x0000000d 0x0002a000 0x000005a8
-[006.584] STATE <-- SAHARA_WAIT_COMMAND
-[006.584] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.584] 0x0000000d 0x0002a600 0x00001000
-[006.584] STATE <-- SAHARA_WAIT_COMMAND
-[006.585] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.585] 0x0000000d 0x0002b600 0x00001000
-[006.585] STATE <-- SAHARA_WAIT_COMMAND
-[006.586] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.586] 0x0000000d 0x0002c600 0x00001000
-[006.586] STATE <-- SAHARA_WAIT_COMMAND
-[006.587] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.587] 0x0000000d 0x0002d600 0x00001000
-[006.587] STATE <-- SAHARA_WAIT_COMMAND
-[006.587] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.588] 0x0000000d 0x0002e600 0x00001000
-[006.588] STATE <-- SAHARA_WAIT_COMMAND
-[006.588] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.588] 0x0000000d 0x0002f600 0x00001000
-[006.589] STATE <-- SAHARA_WAIT_COMMAND
-[006.589] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.589] 0x0000000d 0x00030600 0x00001000
-[006.590] STATE <-- SAHARA_WAIT_COMMAND
-[006.590] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.590] 0x0000000d 0x00031600 0x00001000
-[006.590] STATE <-- SAHARA_WAIT_COMMAND
-[006.591] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.591] 0x0000000d 0x00032600 0x00001000
-[006.591] STATE <-- SAHARA_WAIT_COMMAND
-[006.592] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.592] 0x0000000d 0x00033600 0x00001000
-[006.592] STATE <-- SAHARA_WAIT_COMMAND
-[006.593] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.593] 0x0000000d 0x00034600 0x00001000
-[006.593] STATE <-- SAHARA_WAIT_COMMAND
-[006.593] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.594] 0x0000000d 0x00035600 0x00001000
-[006.594] STATE <-- SAHARA_WAIT_COMMAND
-[006.594] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.594] 0x0000000d 0x00036600 0x00001000
-[006.595] STATE <-- SAHARA_WAIT_COMMAND
-[006.595] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.595] 0x0000000d 0x00037600 0x00001000
-[006.596] STATE <-- SAHARA_WAIT_COMMAND
-[006.596] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.596] 0x0000000d 0x00038600 0x00001000
-[006.596] STATE <-- SAHARA_WAIT_COMMAND
-[006.597] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.597] 0x0000000d 0x00039600 0x00001000
-[006.597] STATE <-- SAHARA_WAIT_COMMAND
-[006.598] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.598] 0x0000000d 0x0003a600 0x00001000
-[006.598] STATE <-- SAHARA_WAIT_COMMAND
-[006.598] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.599] 0x0000000d 0x0003b600 0x00001000
-[006.599] STATE <-- SAHARA_WAIT_COMMAND
-[006.599] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.599] 0x0000000d 0x0003c600 0x00001000
-[006.600] STATE <-- SAHARA_WAIT_COMMAND
-[006.600] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.600] 0x0000000d 0x0003d600 0x00001000
-[006.601] STATE <-- SAHARA_WAIT_COMMAND
-[006.601] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.601] 0x0000000d 0x0003e600 0x00001000
-[006.602] STATE <-- SAHARA_WAIT_COMMAND
-[006.602] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.602] 0x0000000d 0x0003f600 0x00001000
-[006.602] STATE <-- SAHARA_WAIT_COMMAND
-[006.603] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.603] 0x0000000d 0x00040600 0x00001000
-[006.603] STATE <-- SAHARA_WAIT_COMMAND
-[006.604] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.604] 0x0000000d 0x00041600 0x00001000
-[006.604] STATE <-- SAHARA_WAIT_COMMAND
-[006.605] RECEIVED <-- SAHARA_READ_DATA_ID
-[006.605] 0x0000000d 0x00042600 0x00001000
-[006.605] STATE <-- SAHARA_WAIT_COMMAND
-[006.608] RECEIVED <-- SAHARA_END_IMAGE_TX_ID
-[006.608] image_id = 13, status = 0
-[006.608] SENDING --> SAHARA_DONE
-[006.609] STATE <-- SAHARA_WAIT_DONE_RESP
-[006.609] RECEIVED <-- SAHARA_DONE_RESP_ID
-[006.609] image_tx_status = 1
-[006.609] Successfully uploaded all images
-[006.609] Sahara protocol completed
-[006.609] dir=EM20GRAR01A04V01M4G_factory/update/firehose
-[006.610] d_name=rawprogram_nand_p4K_b256K_factory.xml
-[007.628] <log value="INFO: Binary build date: Apr 15 2019 @ 00:24:50" />
-[007.628] <log value="INFO: Binary build date: Apr 15 2019 @ 00:24:50." />
-[007.629] <log value="INFO: Chip serial num: 0 (0x0)" />
-[007.629] <log value="INFO: Supported Functions (15):" />
-[007.630] <log value="INFO: program" />
-[007.630] <log value="INFO: read" />
-[007.630] <log value="INFO: nop" />
-[007.631] <log value="INFO: patch" />
-[007.631] <log value="INFO: configure" />
-[007.631] <log value="INFO: setbootablestoragedrive" />
-[007.632] <log value="INFO: erase" />
-[007.632] <log value="INFO: power" />
-[007.632] <log value="INFO: firmwarewrite" />
-[007.633] <log value="INFO: getstorageinfo" />
-[007.633] <log value="INFO: benchmark" />
-[007.633] <log value="INFO: emmc" />
-[007.634] <log value="INFO: ufs" />
-[007.634] <log value="INFO: fixgpt" />
-[007.634] <log value="INFO: getsha256digest" />
-[007.635] <log value="INFO: End of supported functions 15" />
-[008.630] inf[0] ep_in -1/1024, errno = 110 (Connection timed out), timeout=1000
-[008.630] qusb_noblock_read read=0, errno: 110 (Connection timed out)
-[008.630] qusb_noblock_read cur=0, min_size=1
-[008.631] firehose_protocol.c fh_recv_cmd 294 fail
-[008.631] <configure MemoryName="nand" Verbose="0" AlwaysValidate="0" MaxDigestTableSizeInBytes="2048" MaxPayloadSizeToTargetInBytes="8192"  ZlpAwareHost="1" SkipStorageInit="0" />
-[008.632] <log value="INFO: Calling handler for configure" />
-[008.632] <log value="INFO: Storage type set to value nand" />
-[008.634] <response value="ACK" MemoryName="nand" MinVersionSupported="1" Version="1" MaxPayloadSizeToTargetInBytes="8192" MaxPayloadSizeToTargetInBytesSupported="8192" MaxXMLSizeInBytes="4096" DateTime="Apr 15 2019 - 00:24:50" />
-[008.634] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="640" physical_partition_number="0" start_sector="0"    />
-[008.635] <log value="INFO: Calling handler for erase" />
-[008.779] <log value="INFO: [295] bbt_size:100 blocks:800." />
-[008.780] <log value="INFO: [297] bbt_size:100 blocks:800." />
-[009.141] <log value="INFO: Erasing start sector 0, num sectors 0" />
-[009.150] <response value="ACK" rawmode="false" />
-[009.151] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="640" physical_partition_number="0" start_sector="640"    />
-[009.152] <log value="INFO: Calling handler for erase" />
-[009.152] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.153] <log value="INFO: Erasing start sector 640, num sectors 0" />
-[009.160] <response value="ACK" rawmode="false" />
-[009.160] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="5632" physical_partition_number="0" start_sector="1280"    />
-[009.161] <log value="INFO: Calling handler for erase" />
-[009.162] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.162] <log value="INFO: Erasing start sector 1280, num sectors 0" />
-[009.247] <response value="ACK" rawmode="false" />
-[009.248] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="448" physical_partition_number="0" start_sector="9600"    />
-[009.249] <log value="INFO: Calling handler for erase" />
-[009.249] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.250] <log value="INFO: Erasing start sector 9600, num sectors 0" />
-[009.258] <response value="ACK" rawmode="false" />
-[009.258] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="256" physical_partition_number="0" start_sector="10048"    />
-[009.259] <log value="INFO: Calling handler for erase" />
-[009.260] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.261] <log value="INFO: Erasing start sector 10048, num sectors 0" />
-[009.264] <response value="ACK" rawmode="false" />
-[009.264] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="256" physical_partition_number="0" start_sector="10944"    />
-[009.265] <log value="INFO: Calling handler for erase" />
-[009.266] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.267] <log value="INFO: Erasing start sector 10944, num sectors 0" />
-[009.270] <response value="ACK" rawmode="false" />
-[009.270] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="256" physical_partition_number="0" start_sector="11200"    />
-[009.271] <log value="INFO: Calling handler for erase" />
-[009.272] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.273] <log value="INFO: Erasing start sector 11200, num sectors 0" />
-[009.276] <response value="ACK" rawmode="false" />
-[009.276] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="256" physical_partition_number="0" start_sector="11456"    />
-[009.277] <log value="INFO: Calling handler for erase" />
-[009.277] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.278] <log value="INFO: Erasing start sector 11456, num sectors 0" />
-[009.282] <response value="ACK" rawmode="false" />
-[009.282] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="256" physical_partition_number="0" start_sector="11712"    />
-[009.283] <log value="INFO: Calling handler for erase" />
-[009.283] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.284] <log value="INFO: Erasing start sector 11712, num sectors 0" />
-[009.288] <response value="ACK" rawmode="false" />
-[009.288] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="256" physical_partition_number="0" start_sector="11968"    />
-[009.289] <log value="INFO: Calling handler for erase" />
-[009.289] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.290] <log value="INFO: Erasing start sector 11968, num sectors 0" />
-[009.294] <response value="ACK" rawmode="false" />
-[009.294] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="640" physical_partition_number="0" start_sector="12224"    />
-[009.295] <log value="INFO: Calling handler for erase" />
-[009.295] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.296] <log value="INFO: Erasing start sector 12224, num sectors 0" />
-[009.307] <response value="ACK" rawmode="false" />
-[009.307] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="384" physical_partition_number="0" start_sector="12864"    />
-[009.308] <log value="INFO: Calling handler for erase" />
-[009.308] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.309] <log value="INFO: Erasing start sector 12864, num sectors 0" />
-[009.315] <response value="ACK" rawmode="false" />
-[009.315] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="256" physical_partition_number="0" start_sector="14016"    />
-[009.316] <log value="INFO: Calling handler for erase" />
-[009.316] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.317] <log value="INFO: Erasing start sector 14016, num sectors 0" />
-[009.320] <response value="ACK" rawmode="false" />
-[009.320] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="3072" physical_partition_number="0" start_sector="14272"    />
-[009.321] <log value="INFO: Calling handler for erase" />
-[009.322] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.323] <log value="INFO: Erasing start sector 14272, num sectors 0" />
-[009.384] <response value="ACK" rawmode="false" />
-[009.384] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="3072" physical_partition_number="0" start_sector="17344"    />
-[009.385] <log value="INFO: Calling handler for erase" />
-[009.386] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.386] <log value="INFO: Erasing start sector 17344, num sectors 0" />
-[009.448] <response value="ACK" rawmode="false" />
-[009.448] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="23808" physical_partition_number="0" start_sector="27136"    />
-[009.449] <log value="INFO: Calling handler for erase" />
-[009.450] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.450] <log value="INFO: Erasing start sector 27136, num sectors 0" />
-[009.932] <response value="ACK" rawmode="false" />
-[009.932] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="7872" physical_partition_number="0" start_sector="50944"    />
-[009.933] <log value="INFO: Calling handler for erase" />
-[009.933] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[009.934] <log value="INFO: Erasing start sector 50944, num sectors 0" />
-[010.074] <response value="ACK" rawmode="false" />
-[010.074] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="43520" physical_partition_number="0" start_sector="58816"    />
-[010.075] <log value="INFO: Calling handler for erase" />
-[010.076] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[010.077] <log value="INFO: Erasing start sector 58816, num sectors 0" />
-[010.712] <response value="ACK" rawmode="false" />
-[010.713] <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="28736" physical_partition_number="0" start_sector="102336"    />
-[010.713] <log value="INFO: Calling handler for erase" />
-[010.714] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[010.715] <log value="INFO: Erasing start sector 102336, num sectors 0" />
-[011.295] <response value="ACK" rawmode="false" />
-[011.295] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="partition_complete_p4K_b256K.mbn" num_partition_sectors="4"  physical_partition_number="0" start_sector="640" />
-[011.296] <log value="INFO: Calling handler for program" />
-[011.297] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[011.297] <response value="ACK" rawmode="true" />
-[011.298] send partition_complete_p4K_b256K.mbn, filesize=16384
-[011.298] Upgrade progress:   0
-[011.303] send finished
-[011.306] <response value="ACK" rawmode="false" />
-[011.306] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\cefs.mbn" num_partition_sectors="355"  physical_partition_number="0" start_sector="1280" />
-[011.307] <log value="INFO: Calling handler for program" />
-[011.308] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[011.308] <response value="ACK" rawmode="true" />
-[011.309] send ../cefs.mbn, filesize=1454080
-[011.926] send finished
-[011.928] <response value="ACK" rawmode="false" />
-[011.928] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\tz.mbn" num_partition_sectors="228"  physical_partition_number="0" start_sector="9600" />
-[011.929] <log value="INFO: Calling handler for program" />
-[011.930] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[011.930] <response value="ACK" rawmode="true" />
-[011.931] send ../tz.mbn, filesize=933888
-[012.018] Upgrade progress:   1
-[012.324] send finished
-[012.328] <response value="ACK" rawmode="false" />
-[012.328] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\devcfg.mbn" num_partition_sectors="10"  physical_partition_number="0" start_sector="10048" />
-[012.329] <log value="INFO: Calling handler for program" />
-[012.330] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[012.330] <response value="ACK" rawmode="true" />
-[012.331] send ../devcfg.mbn, filesize=40222
-[012.346] send finished
-[012.349] <response value="ACK" rawmode="false" />
-[012.349] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\xbl_cfg.elf" num_partition_sectors="14"  physical_partition_number="0" start_sector="10944" />
-[012.350] <log value="INFO: Calling handler for program" />
-[012.351] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[012.351] <response value="ACK" rawmode="true" />
-[012.352] send ../xbl_cfg.elf, filesize=53348
-[012.374] send finished
-[012.377] <response value="ACK" rawmode="false" />
-[012.377] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\multi_image.mbn" num_partition_sectors="4"  physical_partition_number="0" start_sector="11200" />
-[012.378] <log value="INFO: Calling handler for program" />
-[012.379] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[012.379] <response value="ACK" rawmode="true" />
-[012.380] send ../multi_image.mbn, filesize=13064
-[012.385] send finished
-[012.388] <response value="ACK" rawmode="false" />
-[012.388] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\aop.mbn" num_partition_sectors="35"  physical_partition_number="0" start_sector="11456" />
-[012.389] <log value="INFO: Calling handler for program" />
-[012.390] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[012.390] <response value="ACK" rawmode="true" />
-[012.391] send ../aop.mbn, filesize=142624
-[012.451] send finished
-[012.453] <response value="ACK" rawmode="false" />
-[012.453] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\hyp.mbn" num_partition_sectors="20"  physical_partition_number="0" start_sector="11712" />
-[012.454] <log value="INFO: Calling handler for program" />
-[012.454] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[012.455] <response value="ACK" rawmode="true" />
-[012.455] send ../hyp.mbn, filesize=80192
-[012.488] send finished
-[012.491] <response value="ACK" rawmode="false" />
-[012.491] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\abl.elf" num_partition_sectors="37"  physical_partition_number="0" start_sector="11968" />
-[012.492] <log value="INFO: Calling handler for program" />
-[012.493] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[012.493] <response value="ACK" rawmode="true" />
-[012.494] send ../abl.elf, filesize=151552
-[012.557] send finished
-[012.559] <response value="ACK" rawmode="false" />
-[012.559] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\uefi.elf" num_partition_sectors="323"  physical_partition_number="0" start_sector="12224" />
-[012.560] <log value="INFO: Calling handler for program" />
-[012.561] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[012.561] <response value="ACK" rawmode="true" />
-[012.562] send ../uefi.elf, filesize=1323008
-[012.764] Upgrade progress:   2
-[013.122] send finished
-[013.124] <response value="ACK" rawmode="false" />
-[013.124] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\tools.fv" num_partition_sectors="96"  physical_partition_number="0" start_sector="12864" />
-[013.125] <log value="INFO: Calling handler for program" />
-[013.126] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[013.126] <response value="ACK" rawmode="true" />
-[013.127] send ../tools.fv, filesize=393216
-[013.291] send finished
-[013.294] <response value="ACK" rawmode="false" />
-[013.295] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sec.dat" num_partition_sectors="1"  physical_partition_number="0" start_sector="14016" />
-[013.295] <log value="INFO: Calling handler for program" />
-[013.296] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[013.297] <response value="ACK" rawmode="true" />
-[013.297] send ../sec.dat, filesize=80
-[013.298] send finished
-[013.300] <response value="ACK" rawmode="false" />
-[013.300] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sdxpoorwills-boot.img" num_partition_sectors="2340"  physical_partition_number="0" start_sector="14272" />
-[013.301] <log value="INFO: Calling handler for program" />
-[013.302] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[013.302] <response value="ACK" rawmode="true" />
-[013.303] send ../sdxpoorwills-boot.img, filesize=9582592
-[013.491] Upgrade progress:   3
-[014.209] Upgrade progress:   4
-[014.923] Upgrade progress:   5
-[015.642] Upgrade progress:   6
-[016.362] Upgrade progress:   7
-[017.080] Upgrade progress:   8
-[017.385] send finished
-[017.389] <response value="ACK" rawmode="false" />
-[017.389] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sdxpoorwills-boot.img" num_partition_sectors="2340"  physical_partition_number="0" start_sector="17344" />
-[017.390] <log value="INFO: Calling handler for program" />
-[017.391] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[017.391] <response value="ACK" rawmode="true" />
-[017.392] send ../sdxpoorwills-boot.img, filesize=9582592
-[017.803] Upgrade progress:   9
-[018.520] Upgrade progress:   10
-[019.239] Upgrade progress:   11
-[019.954] Upgrade progress:   12
-[020.676] Upgrade progress:   13
-[021.397] Upgrade progress:   14
-[021.475] send finished
-[021.478] <response value="ACK" rawmode="false" />
-[021.478] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\NON-HLOS.ubi" num_partition_sectors="14784"  physical_partition_number="0" start_sector="27136" />
-[021.479] <log value="INFO: Calling handler for program" />
-[021.480] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[021.480] <response value="ACK" rawmode="true" />
-[021.481] send ../NON-HLOS.ubi, filesize=60555264
-[022.113] Upgrade progress:   15
-[022.822] Upgrade progress:   16
-[023.540] Upgrade progress:   17
-[024.264] Upgrade progress:   18
-[024.982] Upgrade progress:   19
-[025.703] Upgrade progress:   20
-[026.427] Upgrade progress:   21
-[027.147] Upgrade progress:   22
-[027.873] Upgrade progress:   23
-[028.599] Upgrade progress:   24
-[029.326] Upgrade progress:   25
-[030.052] Upgrade progress:   26
-[030.781] Upgrade progress:   27
-[031.512] Upgrade progress:   28
-[032.241] Upgrade progress:   29
-[032.974] Upgrade progress:   30
-[033.708] Upgrade progress:   31
-[034.439] Upgrade progress:   32
-[035.176] Upgrade progress:   33
-[035.914] Upgrade progress:   34
-[036.649] Upgrade progress:   35
-[037.389] Upgrade progress:   36
-[038.130] Upgrade progress:   37
-[038.872] Upgrade progress:   38
-[039.611] Upgrade progress:   39
-[040.356] Upgrade progress:   40
-[041.101] Upgrade progress:   41
-[041.844] Upgrade progress:   42
-[042.592] Upgrade progress:   43
-[043.341] Upgrade progress:   44
-[044.087] Upgrade progress:   45
-[044.837] Upgrade progress:   46
-[045.590] Upgrade progress:   47
-[046.339] Upgrade progress:   48
-[047.094] Upgrade progress:   49
-[047.847] Upgrade progress:   50
-[047.879] send finished
-[047.883] <response value="ACK" rawmode="false" />
-[047.883] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sdxpoorwills-recoveryfs.ubi" num_partition_sectors="4224"  physical_partition_number="0" start_sector="50944" />
-[047.884] <log value="INFO: Calling handler for program" />
-[047.884] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[047.885] <response value="ACK" rawmode="true" />
-[047.885] send ../sdxpoorwills-recoveryfs.ubi, filesize=17301504
-[048.561] Upgrade progress:   51
-[049.268] Upgrade progress:   52
-[049.986] Upgrade progress:   53
-[050.706] Upgrade progress:   54
-[051.423] Upgrade progress:   55
-[052.146] Upgrade progress:   56
-[052.868] Upgrade progress:   57
-[053.589] Upgrade progress:   58
-[054.315] Upgrade progress:   59
-[055.039] Upgrade progress:   60
-[055.263] send finished
-[055.267] <response value="ACK" rawmode="false" />
-[055.267] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\usrdata.ubi" num_partition_sectors="512"  physical_partition_number="0" start_sector="58816" />
-[055.268] <log value="INFO: Calling handler for program" />
-[055.269] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[055.269] <response value="ACK" rawmode="true" />
-[055.270] send ../usrdata.ubi, filesize=2097152
-[055.753] Upgrade progress:   61
-[056.148] send finished
-[056.152] <response value="ACK" rawmode="false" />
-[056.152] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sdxpoorwills-sysfs.ubi" num_partition_sectors="15680"  physical_partition_number="0" start_sector="102336" />
-[056.153] <log value="INFO: Calling handler for program" />
-[056.154] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[056.154] <response value="ACK" rawmode="true" />
-[056.154] send ../sdxpoorwills-sysfs.ubi, filesize=64225280
-[056.465] Upgrade progress:   62
-[057.175] Upgrade progress:   63
-[057.889] Upgrade progress:   64
-[058.606] Upgrade progress:   65
-[059.326] Upgrade progress:   66
-[060.047] Upgrade progress:   67
-[060.766] Upgrade progress:   68
-[061.489] Upgrade progress:   69
-[062.215] Upgrade progress:   70
-[062.937] Upgrade progress:   71
-[063.664] Upgrade progress:   72
-[064.392] Upgrade progress:   73
-[065.117] Upgrade progress:   74
-[065.848] Upgrade progress:   75
-[066.579] Upgrade progress:   76
-[067.309] Upgrade progress:   77
-[068.042] Upgrade progress:   78
-[068.778] Upgrade progress:   79
-[069.513] Upgrade progress:   80
-[070.246] Upgrade progress:   81
-[070.985] Upgrade progress:   82
-[071.724] Upgrade progress:   83
-[072.461] Upgrade progress:   84
-[073.202] Upgrade progress:   85
-[073.946] Upgrade progress:   86
-[074.685] Upgrade progress:   87
-[075.430] Upgrade progress:   88
-[076.176] Upgrade progress:   89
-[076.920] Upgrade progress:   90
-[077.668] Upgrade progress:   91
-[078.417] Upgrade progress:   92
-[079.168] Upgrade progress:   93
-[079.916] Upgrade progress:   94
-[080.668] Upgrade progress:   95
-[081.423] Upgrade progress:   96
-[082.174] Upgrade progress:   97
-[082.930] Upgrade progress:   98
-[083.686] Upgrade progress:   99
-[084.193] send finished
-[084.196] <response value="ACK" rawmode="false" />
-[084.197] <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sbl1.mbn" num_partition_sectors="136"  physical_partition_number="0" start_sector="0" />
-[084.198] <log value="INFO: Calling handler for program" />
-[084.198] <log value="INFO: NAND was previously open, returning existing handle 0." />
-[084.199] <response value="ACK" rawmode="true" />
-[084.199] send ../sbl1.mbn, filesize=556180
-[084.430] Upgrade progress:   100
-[084.434] send finished
-[084.437] <response value="ACK" rawmode="false" />
-[084.438] <power value="reset" />
-[084.438] <log value="INFO: Calling handler for power" />
-[084.439] <response value="ACK" rawmode="false" />
-[084.439] <log value="INFO: Will issue reset/power off 100 useconds, if this hangs check if watchdog is enabled" />
-[084.440] <log value="INFO: bsp_target_reset() 1" />
-[084.442] inf[0] ep_in -1/1024, errno = 71 (Protocol error)
-[084.443] qusb_noblock_read read=-1, errno: 71 (Protocol error)
-[084.444] qusb_noblock_read cur=0, min_size=1
-[084.444] firehose_protocol.c fh_recv_cmd 294 fail
-[084.445] THE TOTAL DOWNLOAD TIME IS 77.904 s
-[084.446] Upgrade module successfully.
+root@OpenWrt:~# ./QFirehose -f /mnt/RM500QGLAAR01A01M4G_BETA_20200428F
+[000.000]: QFirehose Version: Quectel_LTE&5G_QFirehose_Linux&Android_V1.3.2
+[000.000]: Builded: May 18 2020 11:32:04
+[000.000]: Find md5 check file </mnt/RM500QGLAAR01A01M4G_BETA_20200428F_factory/md5.txt>
+[000.002]: Totals checking 0 files md5 value, 0 file fail!
+[000.019]: [1] /sys/bus/usb/devices/2-1.4 2c7c/800/414
+[000.026]: P: /dev/bus/usb/002/006 idVendor=2c7c idProduct=0800
+[000.026]: C: /dev/bus/usb/002/006 bNumInterfaces: 5
+[000.026]: I: If#= 0 Alt= 0 #EPs= 2 Cls=ff Sub=ff Prot=30
+[000.026]: E: Ad=81 Atr=02 MxPS= 1024 Ivl=0ms
+[000.026]: E: Ad=01 Atr=02 MxPS= 1024 Ivl=0ms
+[000.026]: I: If#= 1 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
+[000.027]: I: If#= 2 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
+[000.027]: I: If#= 3 Alt= 0 #EPs= 3 Cls=ff Sub=00 Prot=00
+[000.027]: I: If#= 4 Alt= 0 #EPs= 3 Cls=ff Sub=ff Prot=ff
+[000.027]: qusb_noblock_open port_name = /dev/ttyUSB0
+[000.031]: old software version: RM500QGLAAR01A01M4G_BETA_20200428F
+[001.032]: poll_wait events=POLLIN msec=1000 timeout
+[001.032]: qusb_noblock_read cur=0, min_size=1
+[001.032]: switch to 'Emergency download mode'
+[001.034]: successful, wait module reboot
+[002.035]: fail to fopen /sys/bus/usb/devices/2-1.4/uevent, errno: 2 (No such file or directory)
+[003.041]: fail to fopen /sys/bus/usb/devices/2-1.4/uevent, errno: 2 (No such file or directory)
+[004.045]: [1] /sys/bus/usb/devices/1-1.4 5c6/9008/0
+[004.049]: P: /dev/bus/usb/001/012 idVendor=05c6 idProduct=9008
+[004.049]: C: /dev/bus/usb/001/012 bNumInterfaces: 1
+[004.049]: I: If#= 0 Alt= 0 #EPs= 2 Cls=ff Sub=ff Prot=11
+[004.049]: E: Ad=81 Atr=02 MxPS= 512 Ivl=0ms
+[004.049]: E: Ad=01 Atr=02 MxPS= 512 Ivl=0ms
+[004.050]: dir=/mnt/RM500QGLAAR01A01M4G_BETA_20200428F_factory/update/firehose
+[004.050]: dir=/mnt/RM500QGLAAR01A01M4G_BETA_20200428F_factory/update/firehose
+[004.051]: d_name=prog_firehose_sdx55.mbn
+[004.051]: prog_nand_firehose_filename = prog_firehose_sdx55.mbn
+[004.051]: STATE <-- SAHARA_WAIT_HELLO
+[004.052]: RECEIVED <--  SAHARA_HELLO_ID
+[004.052]: RECEIVED <-- SAHARA_MODE_IMAGE_TX_PENDING
+[004.052]: SENDING --> SAHARA_HELLO_RESPONSE
+[004.052]: STATE <-- SAHARA_WAIT_COMMAND
+[004.053]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.053]: 0x0000000d 0x00000000 0x00000034
+[004.056]: STATE <-- SAHARA_WAIT_COMMAND
+[004.056]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.056]: 0x0000000d 0x00000034 0x00000080
+[004.056]: STATE <-- SAHARA_WAIT_COMMAND
+[004.057]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.057]: 0x0000000d 0x00001000 0x00001000
+[004.058]: STATE <-- SAHARA_WAIT_COMMAND
+[004.087]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.087]: 0x0000000d 0x00002000 0x000009d0
+[004.087]: STATE <-- SAHARA_WAIT_COMMAND
+[004.088]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.088]: 0x0000000d 0x00003000 0x00001000
+[004.093]: STATE <-- SAHARA_WAIT_COMMAND
+[004.094]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.094]: 0x0000000d 0x00004000 0x00001000
+[004.094]: STATE <-- SAHARA_WAIT_COMMAND
+[004.095]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.095]: 0x0000000d 0x00005000 0x00001000
+[004.095]: STATE <-- SAHARA_WAIT_COMMAND
+[004.096]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.096]: 0x0000000d 0x00006000 0x00001000
+[004.096]: STATE <-- SAHARA_WAIT_COMMAND
+[004.097]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.097]: 0x0000000d 0x00007000 0x00001000
+[004.098]: STATE <-- SAHARA_WAIT_COMMAND
+[004.098]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.098]: 0x0000000d 0x00008000 0x00001000
+[004.099]: STATE <-- SAHARA_WAIT_COMMAND
+[004.099]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.099]: 0x0000000d 0x00009000 0x00001000
+[004.100]: STATE <-- SAHARA_WAIT_COMMAND
+[004.100]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.100]: 0x0000000d 0x0000a000 0x00001000
+[004.101]: STATE <-- SAHARA_WAIT_COMMAND
+[004.101]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.101]: 0x0000000d 0x0000b000 0x00001000
+[004.103]: STATE <-- SAHARA_WAIT_COMMAND
+[004.103]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.103]: 0x0000000d 0x0000c000 0x00001000
+[004.104]: STATE <-- SAHARA_WAIT_COMMAND
+[004.104]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.104]: 0x0000000d 0x0000d000 0x00001000
+[004.105]: STATE <-- SAHARA_WAIT_COMMAND
+[004.105]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.105]: 0x0000000d 0x0000e000 0x00001000
+[004.106]: STATE <-- SAHARA_WAIT_COMMAND
+[004.106]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.106]: 0x0000000d 0x0000f000 0x00001000
+[004.107]: STATE <-- SAHARA_WAIT_COMMAND
+[004.107]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.108]: 0x0000000d 0x00010000 0x00001000
+[004.108]: STATE <-- SAHARA_WAIT_COMMAND
+[004.108]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.109]: 0x0000000d 0x00011000 0x00001000
+[004.109]: STATE <-- SAHARA_WAIT_COMMAND
+[004.110]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.110]: 0x0000000d 0x00012000 0x00001000
+[004.110]: STATE <-- SAHARA_WAIT_COMMAND
+[004.111]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.111]: 0x0000000d 0x00013000 0x00001000
+[004.111]: STATE <-- SAHARA_WAIT_COMMAND
+[004.112]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.112]: 0x0000000d 0x00014000 0x00001000
+[004.113]: STATE <-- SAHARA_WAIT_COMMAND
+[004.113]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.113]: 0x0000000d 0x00015000 0x00001000
+[004.114]: STATE <-- SAHARA_WAIT_COMMAND
+[004.114]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.114]: 0x0000000d 0x00016000 0x00001000
+[004.115]: STATE <-- SAHARA_WAIT_COMMAND
+[004.115]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.115]: 0x0000000d 0x00017000 0x00001000
+[004.116]: STATE <-- SAHARA_WAIT_COMMAND
+[004.116]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.116]: 0x0000000d 0x00018000 0x00001000
+[004.117]: STATE <-- SAHARA_WAIT_COMMAND
+[004.117]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.117]: 0x0000000d 0x00019000 0x00001000
+[004.118]: STATE <-- SAHARA_WAIT_COMMAND
+[004.118]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.118]: 0x0000000d 0x0001a000 0x00001000
+[004.119]: STATE <-- SAHARA_WAIT_COMMAND
+[004.119]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.119]: 0x0000000d 0x0001b000 0x00001000
+[004.120]: STATE <-- SAHARA_WAIT_COMMAND
+[004.120]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.120]: 0x0000000d 0x0001c000 0x00001000
+[004.121]: STATE <-- SAHARA_WAIT_COMMAND
+[004.121]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.122]: 0x0000000d 0x0001d000 0x00001000
+[004.122]: STATE <-- SAHARA_WAIT_COMMAND
+[004.123]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.123]: 0x0000000d 0x0001e000 0x00001000
+[004.123]: STATE <-- SAHARA_WAIT_COMMAND
+[004.124]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.124]: 0x0000000d 0x0001f000 0x00001000
+[004.124]: STATE <-- SAHARA_WAIT_COMMAND
+[004.125]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.125]: 0x0000000d 0x00020000 0x00001000
+[004.125]: STATE <-- SAHARA_WAIT_COMMAND
+[004.126]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.126]: 0x0000000d 0x00021000 0x00001000
+[004.126]: STATE <-- SAHARA_WAIT_COMMAND
+[004.127]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.127]: 0x0000000d 0x00022000 0x00001000
+[004.127]: STATE <-- SAHARA_WAIT_COMMAND
+[004.128]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.128]: 0x0000000d 0x00023000 0x00001000
+[004.128]: STATE <-- SAHARA_WAIT_COMMAND
+[004.129]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.129]: 0x0000000d 0x00024000 0x00001000
+[004.129]: STATE <-- SAHARA_WAIT_COMMAND
+[004.130]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.130]: 0x0000000d 0x00025000 0x00001000
+[004.130]: STATE <-- SAHARA_WAIT_COMMAND
+[004.131]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.131]: 0x0000000d 0x00026000 0x00001000
+[004.131]: STATE <-- SAHARA_WAIT_COMMAND
+[004.132]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.132]: 0x0000000d 0x00027000 0x00001000
+[004.132]: STATE <-- SAHARA_WAIT_COMMAND
+[004.133]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.133]: 0x0000000d 0x00028000 0x00001000
+[004.133]: STATE <-- SAHARA_WAIT_COMMAND
+[004.134]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.134]: 0x0000000d 0x00029000 0x00001000
+[004.134]: STATE <-- SAHARA_WAIT_COMMAND
+[004.135]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.135]: 0x0000000d 0x0002a000 0x00001000
+[004.135]: STATE <-- SAHARA_WAIT_COMMAND
+[004.136]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.136]: 0x0000000d 0x0002b000 0x00000578
+[004.136]: STATE <-- SAHARA_WAIT_COMMAND
+[004.136]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.137]: 0x0000000d 0x0002b580 0x00001000
+[004.137]: STATE <-- SAHARA_WAIT_COMMAND
+[004.137]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.138]: 0x0000000d 0x0002c580 0x00001000
+[004.138]: STATE <-- SAHARA_WAIT_COMMAND
+[004.138]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.139]: 0x0000000d 0x0002d580 0x00001000
+[004.139]: STATE <-- SAHARA_WAIT_COMMAND
+[004.139]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.140]: 0x0000000d 0x0002e580 0x00001000
+[004.140]: STATE <-- SAHARA_WAIT_COMMAND
+[004.140]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.141]: 0x0000000d 0x0002f580 0x00001000
+[004.141]: STATE <-- SAHARA_WAIT_COMMAND
+[004.141]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.142]: 0x0000000d 0x00030580 0x00001000
+[004.142]: STATE <-- SAHARA_WAIT_COMMAND
+[004.143]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.143]: 0x0000000d 0x00031580 0x00001000
+[004.143]: STATE <-- SAHARA_WAIT_COMMAND
+[004.144]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.144]: 0x0000000d 0x00032580 0x00001000
+[004.144]: STATE <-- SAHARA_WAIT_COMMAND
+[004.145]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.145]: 0x0000000d 0x00033580 0x00001000
+[004.145]: STATE <-- SAHARA_WAIT_COMMAND
+[004.146]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.146]: 0x0000000d 0x00034580 0x00001000
+[004.146]: STATE <-- SAHARA_WAIT_COMMAND
+[004.147]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.147]: 0x0000000d 0x00035580 0x00001000
+[004.147]: STATE <-- SAHARA_WAIT_COMMAND
+[004.148]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.148]: 0x0000000d 0x00036580 0x00001000
+[004.148]: STATE <-- SAHARA_WAIT_COMMAND
+[004.149]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.149]: 0x0000000d 0x00037580 0x00001000
+[004.149]: STATE <-- SAHARA_WAIT_COMMAND
+[004.150]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.150]: 0x0000000d 0x00038580 0x00001000
+[004.150]: STATE <-- SAHARA_WAIT_COMMAND
+[004.151]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.151]: 0x0000000d 0x00039580 0x00001000
+[004.151]: STATE <-- SAHARA_WAIT_COMMAND
+[004.152]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.152]: 0x0000000d 0x0003a580 0x00001000
+[004.152]: STATE <-- SAHARA_WAIT_COMMAND
+[004.153]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.153]: 0x0000000d 0x0003b580 0x00001000
+[004.153]: STATE <-- SAHARA_WAIT_COMMAND
+[004.154]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.154]: 0x0000000d 0x0003c580 0x00001000
+[004.154]: STATE <-- SAHARA_WAIT_COMMAND
+[004.155]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.155]: 0x0000000d 0x0003d580 0x00001000
+[004.155]: STATE <-- SAHARA_WAIT_COMMAND
+[004.156]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.156]: 0x0000000d 0x0003e580 0x00001000
+[004.156]: STATE <-- SAHARA_WAIT_COMMAND
+[004.157]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.157]: 0x0000000d 0x0003f580 0x00001000
+[004.157]: STATE <-- SAHARA_WAIT_COMMAND
+[004.158]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.158]: 0x0000000d 0x00040580 0x00001000
+[004.158]: STATE <-- SAHARA_WAIT_COMMAND
+[004.159]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.159]: 0x0000000d 0x00041580 0x00001000
+[004.159]: STATE <-- SAHARA_WAIT_COMMAND
+[004.160]: RECEIVED <-- SAHARA_READ_DATA_ID
+[004.160]: 0x0000000d 0x00042580 0x00000800
+[004.160]: STATE <-- SAHARA_WAIT_COMMAND
+[004.163]: RECEIVED <-- SAHARA_END_IMAGE_TX_ID
+[004.163]: image_id = 13, status = 0
+[004.164]: SENDING --> SAHARA_DONE
+[004.164]: STATE <-- SAHARA_WAIT_DONE_RESP
+[004.164]: RECEIVED <-- SAHARA_DONE_RESP_ID
+[004.164]: image_tx_status = 1
+[004.164]: Successfully uploaded all images
+[004.164]: Sahara protocol completed
+[004.165]: dir=/mnt/RM500QGLAAR01A01M4G_BETA_20200428F_factory/update/firehose
+[004.165]: d_name=rawprogram_nand_p4K_b256K_factory.xml
+[005.185]: <log value="INFO: Binary build date: Apr 19 2020 @ 17:49:11" />
+[005.185]: <log value="INFO: Binary build date: Apr 19 2020 @ 17:49:11." />
+[005.185]: <log value="INFO: Chip serial num: 0 (0x0)" />
+[005.186]: <log value="INFO: Supported Functions (15):" />
+[005.186]: <log value="INFO: program" />
+[005.187]: <log value="INFO: read" />
+[005.187]: <log value="INFO: nop" />
+[005.187]: <log value="INFO: patch" />
+[005.188]: <log value="INFO: configure" />
+[005.188]: <log value="INFO: setbootablestoragedrive" />
+[005.188]: <log value="INFO: erase" />
+[005.188]: <log value="INFO: power" />
+[005.189]: <log value="INFO: firmwarewrite" />
+[005.189]: <log value="INFO: getstorageinfo" />
+[005.189]: <log value="INFO: benchmark" />
+[005.190]: <log value="INFO: emmc" />
+[005.190]: <log value="INFO: ufs" />
+[005.190]: <log value="INFO: fixgpt" />
+[005.191]: <log value="INFO: getsha256digest" />
+[005.191]: <log value="INFO: End of supported functions 15" />
+[006.182]: inf[0] ep_in -1/1024, errno = 110 (Operation timed out), timeout=1000
+[006.182]: qusb_noblock_read read=0, errno: 110 (Operation timed out)
+[006.182]: qusb_noblock_read cur=0, min_size=1
+[006.182]: firehose_protocol.c fh_recv_cmd 327 fail
+[006.183]: <configure MemoryName="nand" Verbose="0" AlwaysValidate="0" MaxDigestTableSizeInBytes="2048" MaxPayloadSizeToTargetInBytes="8192"  ZlpAwareHost="1" SkipStorageInit="0" />
+[006.184]: <log value="INFO: Calling handler for configure" />
+[006.184]: <log value="INFO: Storage type set to value nand" />
+[006.186]: <response value="ACK" MemoryName="nand" MinVersionSupported="1" Version="1" MaxPayloadSizeToTargetInBytes="8192" MaxPayloadSizeToTargetInBytesSupported="8192" MaxXMLSizeInBytes="4096" DateTime="Apr 19 2020 - 17:49:11" />
+[006.186]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="640" physical_partition_number="0" start_sector="0"    />
+[006.187]: <log value="INFO: Calling handler for erase" />
+[006.256]: <log value="INFO: [296] bbt_size:100 blocks:800." />
+[006.256]: <log value="INFO: [298] bbt_size:100 blocks:800." />
+[006.645]: <log value="INFO: Erasing start sector 0, num sectors 0" />
+[006.653]: <response value="ACK" rawmode="false" />
+[006.654]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="256" physical_partition_number="0" start_sector="640"    />
+[006.656]: <log value="INFO: Calling handler for erase" />
+[006.657]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.658]: <log value="INFO: Erasing start sector 640, num sectors 0" />
+[006.660]: <response value="ACK" rawmode="false" />
+[006.661]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="5632" physical_partition_number="0" start_sector="896"    />
+[006.662]: <log value="INFO: Calling handler for erase" />
+[006.663]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.665]: <log value="INFO: Erasing start sector 896, num sectors 0" />
+[006.807]: <response value="ACK" rawmode="false" />
+[006.807]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="512" physical_partition_number="0" start_sector="8704"    />
+[006.808]: <log value="INFO: Calling handler for erase" />
+[006.810]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.811]: <log value="INFO: Erasing start sector 8704, num sectors 0" />
+[006.818]: <response value="ACK" rawmode="false" />
+[006.819]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="9216"    />
+[006.820]: <log value="INFO: Calling handler for erase" />
+[006.821]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.822]: <log value="INFO: Erasing start sector 9216, num sectors 0" />
+[006.825]: <response value="ACK" rawmode="false" />
+[006.826]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="9856"    />
+[006.827]: <log value="INFO: Calling handler for erase" />
+[006.828]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.829]: <log value="INFO: Erasing start sector 9856, num sectors 0" />
+[006.832]: <response value="ACK" rawmode="false" />
+[006.833]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="10176"    />
+[006.834]: <log value="INFO: Calling handler for erase" />
+[006.835]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.835]: <log value="INFO: Erasing start sector 10176, num sectors 0" />
+[006.839]: <response value="ACK" rawmode="false" />
+[006.840]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="10496"    />
+[006.841]: <log value="INFO: Calling handler for erase" />
+[006.842]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.843]: <log value="INFO: Erasing start sector 10496, num sectors 0" />
+[006.846]: <response value="ACK" rawmode="false" />
+[006.847]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="10816"    />
+[006.848]: <log value="INFO: Calling handler for erase" />
+[006.848]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.849]: <log value="INFO: Erasing start sector 10816, num sectors 0" />
+[006.853]: <response value="ACK" rawmode="false" />
+[006.854]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="11136"    />
+[006.855]: <log value="INFO: Calling handler for erase" />
+[006.856]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.856]: <log value="INFO: Erasing start sector 11136, num sectors 0" />
+[006.860]: <response value="ACK" rawmode="false" />
+[006.861]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="11456"    />
+[006.862]: <log value="INFO: Calling handler for erase" />
+[006.863]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.864]: <log value="INFO: Erasing start sector 11456, num sectors 0" />
+[006.867]: <response value="ACK" rawmode="false" />
+[006.868]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="640" physical_partition_number="0" start_sector="11776"    />
+[006.869]: <log value="INFO: Calling handler for erase" />
+[006.870]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.871]: <log value="INFO: Erasing start sector 11776, num sectors 0" />
+[006.880]: <response value="ACK" rawmode="false" />
+[006.880]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="12416"    />
+[006.881]: <log value="INFO: Calling handler for erase" />
+[006.882]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.883]: <log value="INFO: Erasing start sector 12416, num sectors 0" />
+[006.887]: <response value="ACK" rawmode="false" />
+[006.888]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="320" physical_partition_number="0" start_sector="13376"    />
+[006.889]: <log value="INFO: Calling handler for erase" />
+[006.889]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.890]: <log value="INFO: Erasing start sector 13376, num sectors 0" />
+[006.894]: <response value="ACK" rawmode="false" />
+[006.894]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="3584" physical_partition_number="0" start_sector="13696"    />
+[006.895]: <log value="INFO: Calling handler for erase" />
+[006.896]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.897]: <log value="INFO: Erasing start sector 13696, num sectors 0" />
+[006.953]: <response value="ACK" rawmode="false" />
+[006.953]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="3584" physical_partition_number="0" start_sector="17280"    />
+[006.955]: <log value="INFO: Calling handler for erase" />
+[006.955]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[006.956]: <log value="INFO: Erasing start sector 17280, num sectors 0" />
+[007.014]: <response value="ACK" rawmode="false" />
+[007.014]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="28928" physical_partition_number="0" start_sector="27456"    />
+[007.016]: <log value="INFO: Calling handler for erase" />
+[007.016]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[007.017]: <log value="INFO: Erasing start sector 27456, num sectors 0" />
+[007.548]: <response value="ACK" rawmode="false" />
+[007.548]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="5120" physical_partition_number="0" start_sector="56384"    />
+[007.550]: <log value="INFO: Calling handler for erase" />
+[007.550]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[007.551]: <log value="INFO: Erasing start sector 56384, num sectors 0" />
+[007.628]: <response value="ACK" rawmode="false" />
+[007.628]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="32000" physical_partition_number="0" start_sector="61504"    />
+[007.629]: <log value="INFO: Calling handler for erase" />
+[007.630]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[007.631]: <log value="INFO: Erasing start sector 61504, num sectors 0" />
+[008.119]: <response value="ACK" rawmode="false" />
+[008.119]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="9216" physical_partition_number="0" start_sector="93504"    />
+[008.120]: <log value="INFO: Calling handler for erase" />
+[008.121]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[008.122]: <log value="INFO: Erasing start sector 93504, num sectors 0" />
+[008.228]: <response value="ACK" rawmode="false" />
+[008.229]: <erase PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" num_partition_sectors="28352" physical_partition_number="0" start_sector="102720"    />
+[008.230]: <log value="INFO: Calling handler for erase" />
+[008.230]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[008.231]: <log value="INFO: Erasing start sector 102720, num sectors 0" />
+[008.739]: <response value="ACK" rawmode="false" />
+[008.739]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="partition_complete_p4K_b256K.mbn" num_partition_sectors="4"  physical_partition_number="0" start_sector="640" />
+[008.740]: <log value="INFO: Calling handler for program" />
+[008.741]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[008.742]: <response value="ACK" rawmode="true" />
+[008.742]: send partition_complete_p4K_b256K.mbn, filesize=16384
+.
+[008.748]: upgrade progress 0% 16384/191864239
+[008.749]: send finished
+[008.750]: <response value="ACK" rawmode="false" />
+[008.751]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\cefs.mbn" num_partition_sectors="446"  physical_partition_number="0" start_sector="896" />
+[008.752]: <log value="INFO: Calling handler for program" />
+[008.752]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[008.753]: <response value="ACK" rawmode="true" />
+[008.754]: send ../cefs.mbn, filesize=1826816
+.......................
+[009.198]: upgrade progress 0% 1843200/191864239
+[009.198]: send finished
+[009.200]: <response value="ACK" rawmode="false" />
+[009.200]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\tz.mbn" num_partition_sectors="223"  physical_partition_number="0" start_sector="8704" />
+[009.201]: <log value="INFO: Calling handler for program" />
+[009.202]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.203]: <response value="ACK" rawmode="true" />
+[009.203]: send ../tz.mbn, filesize=913408
+............
+[009.430]: upgrade progress 1% 2756608/191864239
+[009.430]: send finished
+[009.431]: <response value="ACK" rawmode="false" />
+[009.431]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\devcfg.mbn" num_partition_sectors="11"  physical_partition_number="0" start_sector="9216" />
+[009.432]: <log value="INFO: Calling handler for program" />
+[009.433]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.434]: <response value="ACK" rawmode="true" />
+[009.434]: send ../devcfg.mbn, filesize=42379
+.
+[009.455]: upgrade progress 1% 2798987/191864239
+[009.456]: send finished
+[009.456]: <response value="ACK" rawmode="false" />
+[009.457]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\apdp.mbn" num_partition_sectors="4"  physical_partition_number="0" start_sector="9856" />
+[009.458]: <log value="INFO: Calling handler for program" />
+[009.459]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.459]: <response value="ACK" rawmode="true" />
+[009.460]: send ../apdp.mbn, filesize=13508
+.
+[009.466]: upgrade progress 1% 2812495/191864239
+[009.466]: send finished
+[009.468]: <response value="ACK" rawmode="false" />
+[009.468]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\xbl_cfg.elf" num_partition_sectors="17"  physical_partition_number="0" start_sector="10176" />
+[009.469]: <log value="INFO: Calling handler for program" />
+[009.470]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.471]: <response value="ACK" rawmode="true" />
+[009.471]: send ../xbl_cfg.elf, filesize=65724
+.
+[009.498]: upgrade progress 1% 2878219/191864239
+[009.498]: send finished
+[009.499]: <response value="ACK" rawmode="false" />
+[009.500]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\multi_image.mbn" num_partition_sectors="4"  physical_partition_number="0" start_sector="10496" />
+[009.501]: <log value="INFO: Calling handler for program" />
+[009.501]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.502]: <response value="ACK" rawmode="true" />
+[009.503]: send ../multi_image.mbn, filesize=13008
+.
+[009.515]: upgrade progress 1% 2891227/191864239
+[009.516]: send finished
+[009.517]: <response value="ACK" rawmode="false" />
+[009.518]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\hyp.mbn" num_partition_sectors="21"  physical_partition_number="0" start_sector="11136" />
+[009.519]: <log value="INFO: Calling handler for program" />
+[009.520]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.520]: <response value="ACK" rawmode="true" />
+[009.521]: send ../hyp.mbn, filesize=84416
+..
+[009.547]: upgrade progress 1% 2975643/191864239
+[009.547]: send finished
+[009.548]: <response value="ACK" rawmode="false" />
+[009.549]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\abl.elf" num_partition_sectors="43"  physical_partition_number="0" start_sector="11456" />
+[009.550]: <log value="INFO: Calling handler for program" />
+[009.551]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.551]: <response value="ACK" rawmode="true" />
+[009.552]: send ../abl.elf, filesize=176128
+...
+[009.599]: upgrade progress 1% 3151771/191864239
+[009.599]: send finished
+[009.600]: <response value="ACK" rawmode="false" />
+[009.601]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\uefi.elf" num_partition_sectors="291"  physical_partition_number="0" start_sector="11776" />
+[009.602]: <log value="INFO: Calling handler for program" />
+[009.603]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.603]: <response value="ACK" rawmode="true" />
+[009.604]: send ../uefi.elf, filesize=1191936
+...............
+[009.897]: upgrade progress 2% 4343707/191864239
+[009.897]: send finished
+[009.898]: <response value="ACK" rawmode="false" />
+[009.898]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\tools.fv" num_partition_sectors="96"  physical_partition_number="0" start_sector="12416" />
+[009.899]: <log value="INFO: Calling handler for program" />
+[009.900]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[009.901]: <response value="ACK" rawmode="true" />
+[009.901]: send ../tools.fv, filesize=393216
+.....
+[009.995]: upgrade progress 2% 4736923/191864239
+[009.995]: send finished
+[009.997]: <response value="ACK" rawmode="false" />
+[009.997]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sdxprairie-boot.img" num_partition_sectors="2530"  physical_partition_number="0" start_sector="13696" />
+[009.998]: <log value="INFO: Calling handler for program" />
+[009.999]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[010.000]: <response value="ACK" rawmode="true" />
+[010.000]: send ../sdxprairie-boot.img, filesize=10360832
+...............................................................................................................................
+[012.503]: upgrade progress 7% 15097755/191864239
+[012.504]: send finished
+[012.505]: <response value="ACK" rawmode="false" />
+[012.506]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sdxprairie-boot.img" num_partition_sectors="2530"  physical_partition_number="0" start_sector="17280" />
+[012.507]: <log value="INFO: Calling handler for program" />
+[012.508]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[012.508]: <response value="ACK" rawmode="true" />
+[012.509]: send ../sdxprairie-boot.img, filesize=10360832
+...............................................................................................................................
+[014.934]: upgrade progress 13% 25458587/191864239
+[014.935]: send finished
+[014.936]: <response value="ACK" rawmode="false" />
+[014.937]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\NON-HLOS.ubi" num_partition_sectors="18624"  physical_partition_number="0" start_sector="27456" />
+[014.938]: <log value="INFO: Calling handler for program" />
+[014.939]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[014.939]: <response value="ACK" rawmode="true" />
+[014.940]: send ../NON-HLOS.ubi, filesize=76283904
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+[034.852]: upgrade progress 53% 101742491/191864239
+[034.852]: send finished
+[034.854]: <response value="ACK" rawmode="false" />
+[034.855]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sdxprairie-recoveryfs.ubi" num_partition_sectors="3520"  physical_partition_number="0" start_sector="56384" />
+[034.856]: <log value="INFO: Calling handler for program" />
+[034.857]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[034.857]: <response value="ACK" rawmode="true" />
+[034.858]: send ../sdxprairie-recoveryfs.ubi, filesize=14417920
+................................................................................................................................................................................
+[038.365]: upgrade progress 60% 116160411/191864239
+[038.365]: send finished
+[038.367]: <response value="ACK" rawmode="false" />
+[038.367]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\usrdata.ubi" num_partition_sectors="960"  physical_partition_number="0" start_sector="61504" />
+[038.368]: <log value="INFO: Calling handler for program" />
+[038.369]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[038.370]: <response value="ACK" rawmode="true" />
+[038.370]: send ../usrdata.ubi, filesize=3932160
+................................................
+[039.286]: upgrade progress 62% 120092571/191864239
+[039.287]: send finished
+[039.288]: <response value="ACK" rawmode="false" />
+[039.289]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\oemdata.ubi" num_partition_sectors="960"  physical_partition_number="0" start_sector="93504" />
+[039.290]: <log value="INFO: Calling handler for program" />
+[039.291]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[039.291]: <response value="ACK" rawmode="true" />
+[039.292]: send ../oemdata.ubi, filesize=3932160
+................................................
+[040.219]: upgrade progress 64% 124024731/191864239
+[040.220]: send finished
+[040.221]: <response value="ACK" rawmode="false" />
+[040.222]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sdxprairie-sysfs.ubi" num_partition_sectors="16384"  physical_partition_number="0" start_sector="102720" />
+[040.223]: <log value="INFO: Calling handler for program" />
+[040.224]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[040.224]: <response value="ACK" rawmode="true" />
+[040.225]: send ../sdxprairie-sysfs.ubi, filesize=67108864
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+[057.600]: upgrade progress 99% 191133595/191864239
+[057.600]: send finished
+[057.602]: <response value="ACK" rawmode="false" />
+[057.602]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\aop.mbn" num_partition_sectors="38"  physical_partition_number="0" start_sector="10816" />
+[057.603]: <log value="INFO: Calling handler for program" />
+[057.604]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[057.605]: <response value="ACK" rawmode="true" />
+[057.605]: send ../aop.mbn, filesize=154240
+..
+[057.647]: upgrade progress 100% 191864239/191864239
+[057.647]: send finished
+[057.648]: <response value="ACK" rawmode="false" />
+[057.649]: <program PAGES_PER_BLOCK="64" SECTOR_SIZE_IN_BYTES="4096" filename="..\sbl1.mbn" num_partition_sectors="141"  physical_partition_number="0" start_sector="0" />
+[057.650]: <log value="INFO: Calling handler for program" />
+[057.651]: <log value="INFO: NAND was previously open, returning existing handle 0." />
+[057.651]: <response value="ACK" rawmode="true" />
+[057.652]: send ../sbl1.mbn, filesize=576404
+........
+[057.789]: upgrade progress 100% 192440643/191864239
+[057.789]: send finished
+[057.790]: <response value="ACK" rawmode="false" />
+[057.790]: <power value="reset" />
+[057.791]: <log value="INFO: Calling handler for power" />
+[057.791]: <response value="ACK" rawmode="false" />
+[057.792]: <log value="INFO: Will issue reset/power off 100 useconds, if this hangs check if watchdog is enabled" />
+[057.792]: <log value="INFO: bsp_target_reset() 1" />
+[057.800]: inf[0] ep_in -1/1024, errno = 71 (Protocol error)
+[057.800]: qusb_noblock_read read=-1, errno: 71 (Protocol error)
+[057.800]: qusb_noblock_read cur=0, min_size=1
+[057.800]: firehose_protocol.c fh_recv_cmd 327 fail
+[057.800]: THE TOTAL DOWNLOAD TIME IS 53.750 s
+[057.801]: Upgrade module successfully.
+root@OpenWrt:~# 

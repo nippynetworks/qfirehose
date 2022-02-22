@@ -43,19 +43,28 @@ int qusb_noblock_close(void *handle);
 int qusb_noblock_write(const void *handle, void *pbuf, int max_size, int min_size, int timeout_msec, int need_zlp);
 int qusb_noblock_read(const void *handle, void *pbuf, int max_size, int min_size, int timeout_msec);
 int qfile_find_xmlfile(const char *dir, const char *prefix, char** xmlfile);
+#define errno_nodev() (errno == ENOENT || errno == ENODEV)
 // void dbg_time (const char *fmt, ...);
 const char * firehose_get_time(void);
 extern FILE *loghandler;
 #ifdef FH_DEBUG
-#define dbg_time(fmt, args...) do{ \
-    fprintf(stdout, "[%15s-%04d]%s: " fmt, __FILE__, __LINE__, firehose_get_time(), ##args); \
-    if (loghandler) fprintf(loghandler, "[%15s-%04d]%s: " fmt, __FILE__, __LINE__, firehose_get_time(), ##args); \
-}while(0);
+#define dbg_time(fmt, args...)                                                                           \
+    do                                                                                                   \
+    {                                                                                                    \
+        fprintf(stdout, "[%15s-%04d]%s: " fmt, __FILE__, __LINE__, firehose_get_time(), ##args);         \
+        fflush(stdout);                                                                                  \
+        if (loghandler)                                                                                  \
+            fprintf(loghandler, "[%15s-%04d]%s: " fmt, __FILE__, __LINE__, firehose_get_time(), ##args); \
+    } while (0);
 #else
-#define dbg_time(fmt, args...) do{ \
-    fprintf(stdout, "%s: " fmt, firehose_get_time(), ##args); \
-    if (loghandler) fprintf(loghandler, "%s: " fmt, firehose_get_time(), ##args); \
-}while(0);
+#define dbg_time(fmt, args...)                                            \
+    do                                                                    \
+    {                                                                     \
+        fprintf(stdout, "%s: " fmt, firehose_get_time(), ##args);         \
+        fflush(stdout);                                                   \
+        if (loghandler)                                                   \
+            fprintf(loghandler, "%s: " fmt, firehose_get_time(), ##args); \
+    } while (0);
 #endif
 double get_now();
 void get_duration(double start);
