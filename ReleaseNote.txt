@@ -1,5 +1,72 @@
 Release Notes
 
+[QFirehose_Linux_Android_V1.4.17]
+Date:   09/13/2023
+enhancement:
+  1. Added support for upgrading using zip and 7z package
+  2. Optimize pcie code
+  3. Optimize sahara code
+fix:
+
+[QFirehose_Linux_Android_V1.4.16]
+Date:   08/08/2023
+enhancement:
+  1. Update copyright
+  2. Hide -e full wipe, but retain this feature
+  3. Fix errors in klocwork scanning
+  4. Code optimization for erase partitioning operations for nand storage modules
+fix:
+
+[QFirehose_Linux_Android_V1.4.15]
+Date:   06/29/2023
+enhancement:
+  1. Added support for upgrading laptop EM05G-SE10
+  2. Modify the copyright time and add copyright to some c or h files
+  3. Optimize sahara protocol code
+fix:
+
+[QFirehose_Linux_Android_V1.4.14]
+Date:   04/29/2023
+enhancement:
+  1. Added support for upgrading laptop EM05-G and EM061KGL
+  2. Added support for AG590ECNAB upgrade
+  3. Added support for upgrading the RM520NGL Lenovo 5G module (with a specified PID of 0x0803)
+  4. Added support for upgrading AG215S-GLR signed firmware version packs
+fix:
+
+[QFirehose_Linux_Android_V1.4.13]
+Date:   02/20/2023
+enhancement:
+  1. New support for upgrading multiple PCIE modules in a specified way, with a maximum of 10 PCIE modules connected at the same time
+  2. Optimization module connection USB3.0 upgrade
+fix:
+
+[QFirehose_Linux_Android_V1.4.12]
+Date:   12/15/2022
+enhancement:
+  1. Added support for Qualcomm subcontracting firmware upgrade (also compatible with non subcontracting firmware)
+  2. Added EC20£¨3C93 FFFF£©upgrade
+  3. Add BG95M3 anti misburning function
+  4. Add other device type full wipe upgrade functions except nand
+fix:
+
+[QFirehose_Linux_Android_V1.4.11]
+Date:   08/29/2022
+enhancement:
+  1. Better support emmc and ufs smart module
+  2. remove function upgrade one file by '-f filename', nobody use it
+     and make source code complex and difficult to understand.
+     if customer need this function, can by modify firehose/rawprogram_nand_p4K_b256K_factory.xml
+  3. if there is no md5.txt, just ignore, donot treat as error
+  4. New support for upgrading Qualcomm AG215SGLR module and AG215SGLBA module
+fix:
+
+[QFirehose_Linux_Android_V1.4.10]
+Date:   07/15/2022
+enhancement:
+  1. New support for laptop EM05 series and EG060K-EA module upgrade
+fix:
+
 [QFirehose_Linux_Android_V1.4.9]
 Date:   01/17/2022
 enhancement:

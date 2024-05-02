@@ -1,3 +1,14 @@
+/*
+    Copyright 2023 Quectel Wireless Solutions Co.,Ltd
+
+    Quectel hereby grants customers of Quectel a license to use, modify,
+    distribute and publish the Software in binary form provided that
+    customers shall have no right to reverse engineer, reverse assemble,
+    decompile or reduce to source code form any portion of the Software.
+    Under no circumstances may customers modify, demonstrate, use, deliver
+    or disclose any portion of the Software in source code form.
+*/
+
 #ifndef __QFIREHOSE_USB_LINUX_H__
 #define __QFIREHOSE_USB_LINUX_H__
 #include <stdio.h>
@@ -16,8 +27,12 @@
 
 #define MAX_PATH 256
 #define MIN(a,b)	 ((a) < (b)? (a) : (b))
+#define ZIP_INFO  "/tmp/zip_info.txt"
+#define ZIP_PROCESS_INFO  "/tmp/zip_process_info.txt"
 
-extern const char *g_part_upgrade;
+#define safe_free(p) do {if (p != NULL) {free((void*)p); p = NULL;}} while(0)
+
+extern char zip_cmd_buf[512];
 
 typedef struct module_sys_info {
 /*
@@ -42,7 +57,8 @@ void * qusb_noblock_open(const char *module_sys_path, int *idVendor, int *idProd
 int qusb_noblock_close(void *handle);
 int qusb_noblock_write(const void *handle, void *pbuf, int max_size, int min_size, int timeout_msec, int need_zlp);
 int qusb_noblock_read(const void *handle, void *pbuf, int max_size, int min_size, int timeout_msec);
-int qfile_find_xmlfile(const char *dir, const char *prefix, char** xmlfile);
+int qusb_read_speed_atime(const char *module_sys_path, struct timespec *out_time, int *out_speed);
+int qfile_find_file(const char *dir, const char *prefix, const char *suffix, char** filename);
 #define errno_nodev() (errno == ENOENT || errno == ENODEV)
 // void dbg_time (const char *fmt, ...);
 const char * firehose_get_time(void);
@@ -70,7 +86,7 @@ double get_now();
 void get_duration(double start);
 int update_transfer_bytes(long long bytes_cur);
 void set_transfer_allbytes(long long bytes);
-int auto_find_quectel_modules(char *module_sys_path, unsigned size);
+int auto_find_quectel_modules(char *module_sys_path, unsigned size, const char *product, const struct timespec *atime);
 void quectel_get_syspath_name_by_ttyport(const char *module_port_name, char *module_sys_path, unsigned size);
 void quectel_get_ttyport_by_syspath(const char *module_sys_path, char *module_port_name, unsigned size);
 #define error_return()  do {dbg_time("%s %s %d fail\n", __FILE__, __func__, __LINE__); return __LINE__; } while(0)
@@ -123,7 +139,7 @@ enum MHI_EE {
    MHI_EE_DISABLE_TRANSITION = 0x9,
    MHI_EE_MAX
 };
-int qpcie_open(const char *firehose_dir);
+int qpcie_open(const char *firehose_dir, const char *firehose_mbn, const char *module_port_name);
 
 #define Q_USB2TCP_VERSION 0x12345678
 typedef struct {
@@ -139,4 +155,20 @@ typedef struct {
     int idProduct;
     int interfaceNum;
 } TLV_USB;
+
+typedef struct {
+    char zip_file_name_backup[128];
+    char zip_file_dir_backup[256];
+}file_name_backup_count;
+
+typedef struct {
+    int file_name_count;
+    file_name_backup_count file_backup_c[50];
+}file_name_backup;
+
+extern file_name_backup file_name_b;
+
+extern int is_upgrade_fimeware_zip_7z;
+extern int is_firehose_zip_7z_name_exit;
+extern int is_upgrade_fimeware_only_zip;
 #endif
